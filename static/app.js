@@ -3,7 +3,8 @@ class Chatbox {
         this.args = {
             openButton: document.querySelector('.chatbox__button'),
             chatBox: document.querySelector('.chatbox__support'),
-            sendButton: document.querySelector('.send__button')
+            sendButton: document.querySelector('.send__button'),
+
         }
 
         this.state = false;
@@ -67,12 +68,14 @@ class Chatbox {
             this.updateChatText(chatbox)
             textField.value = ''
           });
+
+
     }
 
     updateChatText(chatbox) {
         var html = '';
         this.messages.slice().reverse().forEach(function(item, index) {
-            if (item.name === "Raymond")
+            if (item.name == "Raymond")
             {
                 html += '<div class="messages__item messages__item--visitor">' + item.message + '</div>'
             }
@@ -84,6 +87,10 @@ class Chatbox {
 
         const chatmessage = chatbox.querySelector('.chatbox__messages');
         chatmessage.innerHTML = html;
+
+        const chatWindow = document.getElementById('chatbox__messages');
+        var xH = chatWindow.scrollHeight;
+        chatWindow.scrollTo(0, xH);
     }
 }
 

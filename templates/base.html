@@ -12,7 +12,6 @@
         <div class="chatbox__support">
             <div class="chatbox__header">
                 <div class="chatbox__image--header">
-<!--                    <img src="https://www.nygh.on.ca/themes/custom/de_theme/logo.svg" alt="image">-->
                     <img src="{{ url_for('static', filename='images/nygh.jpg') }}" style="width:80px;height:80px;" />
                 </div>
                 <div class="chatbox__content--header">
@@ -20,7 +19,7 @@
                     <p class="chatbox__description--header">Hi. My name is Romy. How can I help you?</p>
                 </div>
             </div>
-            <div class="chatbox__messages">
+            <div id="chatbox__messages" class="chatbox__messages">
                 <div></div>
             </div>
             <div class="chatbox__footer">

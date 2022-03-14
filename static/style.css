@@ -53,11 +53,12 @@ body {
 }
 
 .send__button {
-    padding: 6px;
+    padding: 8px;
     background: transparent;
-    border: none;
+    border: solid;
     outline: none;
     cursor: pointer;
+    border-radius: 20px;
 }
 
 
