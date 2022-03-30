@@ -17,55 +17,11 @@ from nltk.stem import WordNetLemmatizer
 # colorama.init()
 from colorama import Fore, Style, Back
 import random
+from preprocessing import helper
 #
 # path = r'C:\Users\Admin\Desktop\NYGH.json'
 
 # if __name__ == '__main__':
-class helper:
-    @staticmethod
-    def remove_double_spaces(str):
-        return " ".join(str.split())
-
-    @staticmethod
-    def remove_punctuation(str):
-        return ''.join(c for c in str if c not in punctuation)
-
-    @staticmethod
-    def decontractions(phrase):
-        # specific
-        phrase = re.sub(r"won\'t", "will not", phrase)
-        phrase = re.sub(r"can\'t", "can not", phrase)
-        phrase = re.sub(r"won\’t", "will not", phrase)
-        phrase = re.sub(r"can\’t", "can not", phrase)
-
-        # general
-        phrase = re.sub(r"n\'t", " not", phrase)
-        phrase = re.sub(r"\'re", " are", phrase)
-        phrase = re.sub(r"\'s", " is", phrase)
-        phrase = re.sub(r"\'d", " would", phrase)
-        phrase = re.sub(r"\'ll", " will", phrase)
-        phrase = re.sub(r"\'t", " not", phrase)
-        phrase = re.sub(r"\'ve", " have", phrase)
-        phrase = re.sub(r"\'m", " am", phrase)
-
-        phrase = re.sub(r"n\’t", " not", phrase)
-        phrase = re.sub(r"\’re", " are", phrase)
-        phrase = re.sub(r"\’s", " is", phrase)
-        phrase = re.sub(r"\’d", " would", phrase)
-        phrase = re.sub(r"\’ll", " will", phrase)
-        phrase = re.sub(r"\’t", " not", phrase)
-        phrase = re.sub(r"\’ve", " have", phrase)
-        phrase = re.sub(r"\’m", " am", phrase)
-        return phrase
-
-    @staticmethod
-    def preprocess(sentence):
-        sentence = sentence.lower()
-        sentence = helper.remove_punctuation(sentence)
-        sentence = helper.remove_double_spaces(sentence)
-        sentence = helper.remove_punctuation(sentence)
-        return sentence
-
 
 lemmatizer = WordNetLemmatizer()
 with open(r'augmented_data.json') as f:
@@ -136,7 +92,7 @@ model.add(Dense(128, activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(len(train_y[0]), activation='softmax'))
 # Compile model. Stochastic gradient descent with Nesterov accelerated gradient gives good results for this model
-sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
+sgd = SGD(learning_rate=0.01, decay=1e-6, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 #fitting and saving the model
 hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
