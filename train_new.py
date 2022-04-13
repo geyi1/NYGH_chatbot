@@ -46,8 +46,8 @@ classes = sorted(list(set(classes)))
 # print(words)
 # print(classes)
 
-pickle.dump(words,open('words.pkl','wb'))
-pickle.dump(classes,open('classes.pkl','wb'))
+pickle.dump(words, open('model/words.pkl', 'wb'))
+pickle.dump(classes, open('model/classes.pkl', 'wb'))
 
 # create our training data
 training = []
