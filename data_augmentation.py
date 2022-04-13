@@ -3,10 +3,54 @@ import nlpaug.augmenter.char as nac
 import nlpaug.augmenter.word as naw
 from preprocessing import helper
 
+
+''''
+data augmentation:
+
+We have used nlpaug which is availabel at https://github.com/makcedward/nlpaug for data augmentation, 
+documentation can be found at https://nlpaug.readthedocs.io/en/latest/
+
+note: the following code is specific towards covid-19 data augmentation only
+
+a general format for using the augmentation will look like:
+    f = open("file dir")
+    data = json.load(f)["intents"]
+    aug_list = [aug, aug2, aug3, aug4, aug5]
+    
+    for block in data:
+        augmented_data = {}
+        augmented_data["tag"] = block["tag"]
+        augmented_data["responses"] = block["responses"]
+        augmented_data["patterns"] = []
+
+        temp = []
+        for each in block["patterns"]:
+            each = helper.preprocess(each)
+            temp.append(each)
+            split_word = each.split()
+            back_trans_str = back_trans_aug.augment(each)
+            if back_trans_str != each and back_trans_str:
+                    back_trans_str = helper.preprocess(back_trans_str)
+                    temp.append(back_trans_str)
+            for replace_word in replace_list:
+                ##### replace word in each setence if applicable 
+        
+        for each in temp:
+            count = 0
+            for aug in aug_list:
+                augmented_text = aug.augment(each, n=3)
+                for text in augmented_text:
+                    augmented_data['patterns'].append(text)
+
+        output['intents'].append(augmented_data)
+        
+        with open("augmented_data.json", 'w') as file:
+            json.dump(output, file)
+'''
 if __name__ == '__main__':
     output = {}
 
-    f = open(r'C:\Users\Admin\Desktop\NYGH.json')
+    f = open(r'C:\Users\Admin\Desktop\NYGH.json', encoding='UTF-8')
     data = json.load(f)["intents"]
     output = {}
     output['intents'] = []
@@ -42,16 +86,16 @@ if __name__ == '__main__':
 
         for each in block["patterns"]:
             each = helper.preprocess(each)
-            print("the pattern is: ")
-            print(each)
+            # print("the pattern is: ")
+            # print(each)
             temp.append(each)
             split_word = each.split()
             if block["tag"] != "greetings" and block["tag"] != "thankyou":
                 back_trans_str = back_trans_aug.augment(each)
                 if back_trans_str != each and back_trans_str and abs(len(each) - len(back_trans_str))/len(each) <= 1:
                     back_trans_str = helper.preprocess(back_trans_str)
-                    print("back trans is ")
-                    print(back_trans_str)
+                    # print("back trans is ")
+                    # print(back_trans_str)
                     temp.append(back_trans_str)
             for replace_word in replace_list:
                 if replace_word in split_word:
@@ -89,8 +133,8 @@ if __name__ == '__main__':
                 # print("count is ",count)
                 # count += 1
                 augmented_text = aug.augment(each, n=3)
-                print("augmented text is")
-                print(augmented_text)
+                # print("augmented text is")
+                # print(augmented_text)
                 for text in augmented_text:
                     augmented_data['patterns'].append(text)
 

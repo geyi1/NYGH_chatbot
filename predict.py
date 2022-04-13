@@ -13,6 +13,12 @@ import re
 from string import punctuation
 import time
 
+'''
+This python file:
+- Uses the trained model from train.py and predict result for a given input 
+- You can use this module to test some sample inputs, example are given below
+'''
+
 intents = json.loads(open(r'augmented_data.json').read())
 words = pickle.load(open('words.pkl', 'rb'))
 classes = pickle.load(open('classes.pkl', 'rb'))
@@ -125,43 +131,41 @@ def predict_response(text):
     print("********************************")
     return res
 
+############### example of how to test input below #####################################
 
-# while True:
-#     user = input("give me a string: ")
-#     print("response is: ", predict(user))
-#     print("*****************")
-
-test_dict = {"vaccineAppointment": ["how do I get a vaccine appointment", "how do I book a vaccine appointment", "where do I book a vaccine appointment", "how to book vaccine appointment", "can I rebook appointment", "how to cancel appointment"],
-             "vaccineConfirmation": ["how do I get a receipt for my vaccine", "how will i get confirmation for vaccine", "will i get receipt for vaccination", "how to get pdf for vaccine", "where do i get vaccine confirmation"],
-             "covidEmergency": ["I am having serious fever, what should I do", "I am having severe breathing problem", "I have chest pain", "I am immunocompromise and got covid"],
-             "mixingVaccine": ["can i mix vaccine", "Is it safe to mix vaccines", "what are the effects of mixing vaccine", "do i have to mix vaccine", "why should i mix vaccine"],
-             "covidTravelCAtoUS": ["Do i need vaccination to travel to US", "Do i need to do covid-19 testing to travel to US", "Travelling to US", "Covid guideline from Canada to US"],
-             "covidTravelCAtoWorld": ["International travel guideline", "What do i need for international travelling to US"],
-             "covidTravelWithinCA": ["Do i need covid-testing for travelling within Canada", "Covid guideline for domestic flights"],
-             "covidTravelToCA": ["Do I need to quaratine for entering Canada", "Return to canada covid requirement", "Travel guideline for travelling to canada"]
-             }
-start_time = time.time()
-count = 0
-success = 0
-label_count = 0
-label_success = 0
-for label in test_dict:
-    label_count = 0
-    label_success = 0
-    for each in test_dict[label]:
-        temp = predict_class(each, model)[0]['intent']
-        if label == temp:
-            success += 1
-            label_success += 1
-        count += 1
-        label_count += 1
-        if count == 20:
-            break
-    if count == 20:
-        break
-    # print("label is {}, accuracy is {}".format(label, label_success / label_count * 100))
-    # print("***********************************************")
-# print("overall accuracy is ", success / count * 100)
-# print("count is {}".format(count))
-print("--- model used %s seconds for 20 questions---" % (time.time() - start_time))
-
+'''
+    while True:
+        user = input("give me a string: ")
+        print("response is: ", predict(user))
+        print("*****************")
+    
+    # test_dict = {"vaccineAppointment": ["how do I get a vaccine appointment", "how do I book a vaccine appointment", "where do I book a vaccine appointment", "how to book vaccine appointment", "can I rebook appointment", "how to cancel appointment"],
+    #              "vaccineConfirmation": ["how do I get a receipt for my vaccine", "how will i get confirmation for vaccine", "will i get receipt for vaccination", "how to get pdf for vaccine", "where do i get vaccine confirmation"],
+    #              "covidEmergency": ["I am having serious fever, what should I do", "I am having severe breathing problem", "I have chest pain", "I am immunocompromise and got covid"],
+    #              "mixingVaccine": ["can i mix vaccine", "Is it safe to mix vaccines", "what are the effects of mixing vaccine", "do i have to mix vaccine", "why should i mix vaccine"],
+    #              "covidTravelCAtoUS": ["Do i need vaccination to travel to US", "Do i need to do covid-19 testing to travel to US", "Travelling to US", "Covid guideline from Canada to US"],
+    #              "covidTravelCAtoWorld": ["International travel guideline", "What do i need for international travelling to US"],
+    #              "covidTravelWithinCA": ["Do i need covid-testing for travelling within Canada", "Covid guideline for domestic flights"],
+    #              "covidTravelToCA": ["Do I need to quaratine for entering Canada", "Return to canada covid requirement", "Travel guideline for travelling to canada"]
+    #              }
+    # start_time = time.time()
+    # count = 0
+    # success = 0
+    # label_count = 0
+    # label_success = 0
+    # for label in test_dict:
+    #     label_count = 0
+    #     label_success = 0
+    #     for each in test_dict[label]:
+    #         temp = predict_class(each, model)[0]['intent']
+    #         if label == temp:
+    #             success += 1
+    #             label_success += 1
+    #         count += 1
+    #         label_count += 1
+    #     # print("label is {}, accuracy is {}".format(label, label_success / label_count * 100))
+    #     # print("***********************************************")
+    # print("overall accuracy is {} percent".format(success / count * 100))
+    # # print("count is {}".format(count))
+    # print("--- model used %s seconds for 20 questions---" % (time.time() - start_time))
+'''

@@ -1,27 +1,25 @@
 import json
 import numpy as np
-import tensorflow as tf
-from tensorflow import keras
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Embedding, GlobalAveragePooling1D, Dropout
 from tensorflow.keras.optimizers import SGD
-from tensorflow.keras.preprocessing.text import Tokenizer
-from tensorflow.keras.preprocessing.sequence import pad_sequences
-from sklearn.preprocessing import LabelEncoder
-from string import punctuation
 import pickle
-import re
 import nltk
 from nltk.stem import WordNetLemmatizer
-# import colorama
-# colorama.init()
-from colorama import Fore, Style, Back
 import random
 from preprocessing import helper
+from matplotlib import pyplot as plt
 #
 # path = r'C:\Users\Admin\Desktop\NYGH.json'
 
 # if __name__ == '__main__':
+
+'''
+this python file: 
+- trains a model with datas in augmented_data.json
+- save the training and validation accuracy as pdfs
+- save model for further usage
+'''
 
 lemmatizer = WordNetLemmatizer()
 with open(r'augmented_data.json') as f:
@@ -45,8 +43,8 @@ words = [lemmatizer.lemmatize(w.lower()) for w in words]
 words = sorted(list(set(words)))
 classes = sorted(list(set(classes)))
 
-print(words)
-print(classes)
+# print(words)
+# print(classes)
 
 pickle.dump(words,open('words.pkl','wb'))
 pickle.dump(classes,open('classes.pkl','wb'))
@@ -76,10 +74,10 @@ training = np.array(training)
 # create train and test lists. X - patterns, Y - intents
 train_x = list(training[:,0])
 train_y = list(training[:,1])
-print(train_x)
-print(train_y)
-print(len(words))
-print(len(train_x[0]))
+# print(train_x)
+# print(train_y)
+# print(len(words))
+# print(len(train_x[0]))
 # print("Training data created")
 #
 #
@@ -95,7 +93,25 @@ model.add(Dense(len(train_y[0]), activation='softmax'))
 sgd = SGD(learning_rate=0.01, decay=1e-6, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 #fitting and saving the model
-hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
-model.save('chatbot_model.h5', hist)
+trained_model = model.fit(np.array(train_x), np.array(train_y), epochs=30, batch_size=32, verbose=1, validation_split=0.1)
+print(trained_model.history)
+plt.plot(trained_model.history['accuracy'])
+plt.plot(trained_model.history['val_accuracy'])
+plt.title('model accuracy')
+plt.ylabel('accuracy')
+plt.xlabel('epoch')
+plt.legend(['train', 'val'], loc='upper left')
+plt.savefig('training_accuracy_3.pdf')
+plt.show()
+
+plt.plot(trained_model.history['loss'])
+plt.plot(trained_model.history['val_loss'])
+plt.title('model loss')
+plt.ylabel('loss')
+plt.xlabel('epoch')
+plt.legend(['train', 'val'], loc='upper left')
+plt.savefig('training_loss_3.pdf')
+plt.show()
+model.save('chatbot_model_3.h5', trained_model)
 print("model created")
 

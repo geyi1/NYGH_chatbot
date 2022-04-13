@@ -1,9 +1,9 @@
-# https://www.youtube.com/watch?v=a37BL0stIuM&t=1547s&ab_channel=PythonEngineer
 from flask import Flask, render_template, request, jsonify
-from tensorflow import keras
-import numpy as np
-# from train import model, lbl_encoder, data, max_len, tokenizer
 from predict import predict_response as find_response
+
+'''
+this is the python file to run to launch the chatbot on localhost
+'''
 
 app = Flask(__name__)
 

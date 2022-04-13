@@ -1,6 +1,13 @@
 from string import punctuation
 import re
 
+"""
+this helper function is intended to clean data:
+- lower case all character
+- remove puncuation
+- decontraction
+"""
+
 class helper:
     @staticmethod
     def remove_double_spaces(str):

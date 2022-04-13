@@ -1,0 +1,99 @@
+{
+	"intents": [{
+			"tag": "thankyou",
+			"patterns": ["Thanks", "Thank you", "That's helpful", "Thanks for the help", "thx", "ty", "appreciate it", "grateful", "really helpful", "really useful", "thank you for your help", "thank u for ur help", "thx for ur help", "thanks for your help", "ok", "alright", "aight", "cool", "make sense", "okay", "mhmmm", "mhm", "kk", "nice", ":)", ":))", "byebye", "peace", "peace out", "bye", "goodbye", "have a good day", "886", "88", "see you", "see ya", "see you next time", "I am really happy to for your service", "thanks for your service", "thanks for helping out", "thx for helping out appreciate it", "cool appreciate it", "kkk", "easy", "cool cool", "coolcool", "cool thx"],
+			"responses": ["Happy to help!", "Any time!", "My pleasure", "You're most welcome!"]
+		},
+		{
+			"tag": "greetings",
+			"patterns": ["hello", "hi", "Hi", "HELLO", "Hello"],
+			"responses": ["Hi there, what can I help you with?"]
+		},
+		{
+			"tag": "vaccineAppointment",
+			"patterns":["how do i get a vaccine", "Can I make a appointment for covid vaccine", "How can I make a appointment for covid vaccine", "Where can I make appointment for covid vaccine", "appointment for first dose", "appointment for second dose", "booking", "booking first dose", "booking second dose", "early dose", "early second dose", "earlier first dose", "earlier 1st does", "earlier second dose", "earlier 2nd dose", "qualify", "move up appointment", "move dose up", "move first dose up", "move 1st dose up", "move 2nd dose up", "move second dose up", "rebook appointment", "rebook dose", "rebook first dose", "rebook second dose", "rebook 1st dose", "rebook 2nd dose", "change time", "cancel 1st does", "cancel 2nd does", "change 1st dose time", "change 2nd dose time", "cancel 1st dose", "cancel 2nd dose", "cancel appointment", "cancel booking", "cancel", "adjust booking", "adjust", "how to make appointment", "book vaccine", "vaccine appointment", "cancel first", "cancel second", "online booking", "vaccine online appointment", "moderna appointment", "pfizer appointment", "pfizer vaccine", "pfizer first dose", "pfizer second dose", "moderna first dose", "moderna second dose", "fastest appointment", "fastest vaccine", "quickest appointment time", "soonest appointment time", "soonest appointment", "quickiest appointment time", "book online", "make an appointment", "make appointment", "pfizer appointment", "moderna vaccine", "available vaccine appointment", "when can I be vaccinated", "where can I book appointment for vaccine", "where can I book vaccine appointment", "where to get vaccine", "how to get vaccine", "waitlist vaccine", "3rd dose", "third dose", "change vaccine dates", "edit appointment dates", "edit appointment", "retake vaccine", "rebook appointment", "rebook vaccine", "edit time", "covid19 appointment", "covid appointment", "covid-19 vaccine", "vaccine covid-19", "covid dose"],
+			"responses": ["For vaccination eligibility, please check <a href='https://www.toronto.ca/home/covid-19/covid-19-vaccines/covid-19-vaccine-eligibility-doses/' target='blank'>here </a>. For comparison, age requirements on different kinds of vaccine/booster, please check <a href='https://www.cdc.gov/coronavirus/2019-ncov/vaccines/stay-up-to-date.html?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fcoronavirus%2F2019-ncov%2Fvaccines%2Fdifferent-vaccines.html' target = '_blank'> here </a>. If eligible for vaccination, please visit <a href='https://www.nygh.on.ca/covid19vaccination' target='_blank'> here </a> for more information on how to book online or call us at 437-537-5025 to inquire about available slots in NYGH"]
+		},
+		{
+			"tag": "vaccineConfirmation",
+			"patterns": ["confirmation on appointment", "where can I get my vaccination receipt", "confirmation", "pdf of vaccine dose confirmation", "receipt for dose", "receipt for 1st dose", "receipt for 2nd dose", "confirmation on 1st dose", "confirmation on 2nd dose", "email confirmation", "email dose confirmation", "email vaccine confirmation", "how do I get my vaccination receipt"],
+			"responses": ["Please call us at 437-537-5025 for vaccination appointment confirmation or go online <a href='https://covid-19.ontario.ca/proof-covid-19-vaccination' target='_blank'> here </a> for vaccination receipt"]
+		},
+		{
+			"tag": "covidEmergency",
+			"patterns": ["Severe problem", "Severe Covid Problem", "severe respiratory problems", "asthma", "immunosuppressant", "immunocompromised", "bed-ridden", "immune disease", "immunotherapy", "high bp", "blood pressure", "pacemaker", "liver disease", "dementia", "stroke", "heart disease", "chemotherapy", "obesity", "high BMI", "weak immune system", "low immunity", "difficulty breathing", "trouble breathing", "can't breathe", "shortness of breath", "loss of speech", "can't talk", "loss of mobility", "can't move", "sudden confusion", "confusion", "brain fog", "constant pain", "chest pain", "chest hurts", "blue lips", "blue face", "trouble staying awake", "can't stay awake", "chest pressure", "respiratory disease", "took first shot twices", "took second shot twices", "accidently", "accident", "autistic"],
+			"responses": ["Please contact NYGH via phone immediately (416)756-6000 and inform them about the emergency"]
+		},
+		{
+			"tag": "noAnswer",
+			"patterns": ["cardiac patient, diabetic, kidney disease auto immune disease GFR less than 15", "fractured spine and pain management", "transplant patient", "cancer", "chemo", "radiation therapy", "how do I speak to a doctor", "how to schedule a surgery", "how to book a hospital room", "how to see a specialist", "how to get a doctor referral"],
+			"responses": ["Sorry, I am not sure I understand the problem! For specific inquiries, please contact the hospital at 437-537-5025 to ask about your question!"]
+		},
+		{
+			"tag": "mixingVaccine",
+			"patterns": ["Am I eligible for the booster shot if i received the Johnson vaccine?", "mixed vaccine ", "Can I mix vaccine", "third dose different vaccine from previous", "Pfizer/Moderna mix", "booster with different vaccine", "can i get vaccinated if I have already been vaccinated with vaccine from another country", "Chinese vaccine approved for booster shots", "booster shots available for previous mixing vaccines", "is it recommended to mix vaccine", "what are the drawbacks of mixing vaccine", "is it less effective to mix vaccine", "can mixing vaccine harm my body", "moderna and pfizer mix", "what do studies say about mixing vaccines", "can I choose which vaccine to mix", "what kind of side effects can mixing vaccines cause", "why shouldn't I just wait to get the vaccine I want instead of mixing", "should I mix with moderna if I am below 40", "should I get the flu vaccine as well or will not that mix well", "should I get astrazeneca as my third vaccine", "why should I mix moderna if it might cause myocarditis", "can I get the J&J vaccine to mix with Pfizer or Moderna", "have different vaccines been mixed before", "can I get 3 different vaccines for my 3 doses", "is mixing vaccines better than having the same types"],
+			"responses": ["Please visit <a href='https://www.health.gov.on.ca/en/pro/programs/publichealth/coronavirus/docs/vaccine/Q_A_mixed_heterologous_vaccine_schedules.pdf' target='_blank'> here </a> or <a href='https://www.health.gov.on.ca/en/pro/programs/publichealth/coronavirus/docs/vaccine/COVID-19_vaccine_third_dose_recommendations.pdf’ target='_blank' >here </a> for mixed covid vaccine information."]
+		},
+		{
+			"tag": "covidTravelCAtoUS",
+			"patterns": ["is rapid antigen test enough to travel to US?", "is covid PCR test required for land border from canada to US", "canada to US", "Canada to United States", "Travel from canada to US covid guidelines", "can i go to the states without getting vaccinated", "can I go to US with mixed vaccine", "what are the covid travel guidelines for US", "what are the travel requirements for going to US"],
+			"responses": ["Please visit <a href='https://travel.gc.ca/destinations/united-states' target='_blank' >here</a>. If you decide to travel, review <a href='https://ca.usembassy.gov/covid-19-information-canada-3/ ' target='_blank' >here</a>."]
+		},
+		{
+			"tag": "covidTravelCAtoWorld",
+			"patterns": ["international", "what are travel restrictions for covid across the world", "covid pcr test international requirement for travel", "covid vaccination travel international requirement", "covid international travel requirements", "what covid tests are acceptable for travelling to another country", "is rapid antigen test allowed for travelling to another country", "do I still need to quarantine after travelling", "do I need to quarantine if I am vaccinated and tested", "what happens if I get COVID in another country", "can I get vaccinated in another country", "do I still have to get tested before I re-enter Canada", "is it ok for me to travel if I am unvaccinated", "covid travel by air requirement international", "can people who got vaccinated travel to europe", "if i am vaccinated, can i go to asia", "which countries can I travel if i am not vaccinated", "are prc test globally accepted for travel", "do i still need to be vaccinated if i have my testing result while travelling", "how do COVID policies differ from different countries"],
+			"responses": ["Please visit <a href= https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19/vaccines/vaccine-proof.html#a7' target='_blank' > here </a> for more detailed information &  <a href='https://travel.gc.ca/travelling/advisories' target='_blank' >advice </a>on international flights."]
+		},
+		{
+			"tag": "covidTravelWithinCA",
+			"patterns": ["Travelling within Canada", "domestic flight", "domestic travel", "domestic train", "domestic travel covid requirement", "domestic", "provincial covid requirement", "travelling by land between provinces", "travelling by land between territories", "travelling by train between provinces", "travelling by train between territories", "travelling by plane between provinces", "travelling by plane between territories", "travelling by air between provinces", "travelling by air between territories", "do I need to get tested to fly domestically", "do I need to be vaccinated to fly domestically"],
+			"responses": ["Visit <a href='https://travel.gc.ca/travel-covid/travel-restrictions/domestic-travel' target='_blank' >here</a> or <a href='https://travel.gc.ca/travel-covid/travel-restrictions/provinces' target='_blank' > here </a> for information about domestic flight covid restrictions."]
+
+		},
+		{
+			"tag": "covidTravelToCA",
+			"patterns": ["Travel to Canada covid requirement", "entering canada covid requirement", "return to canada covid requirement", "travel to canada vaccine requirement", "entering canada vaccine requirement", "return to canada vaccine requirement", "travel to canada covid testing", "entering canada covid testing", "return to canada covid testing", "Travel to Canada: Requirements for vaccinated travellers", "eligible to enter or return to Canada", "canada pre-entry testing", "flying to canada", "travelling to canada by car", "travelling to canada by bus", "travelling to canada by train", "travelling to canada by ferry", "travelling to canada by boat", "use arrivecan to enter canada", "arrivecan"],
+			"responses": ["Please visit <a href='https://travel.gc.ca/travel-covid' target='_blank' >here </a>or  <a href='https://www.canada.ca/en/immigration-refugees-citizenship/services/coronavirus-covid19/visitors.html ' target='_blank' >here </a> for covid restrictions if travelling to Canada."]
+		},
+		{
+			"tag": "fullyVaccinatedTraveller",
+			"patterns": ["who's considered fully vaccinated?", "fully vaccinated qualification", "fully vaccinated requirements", "2 dose means full vaccination?", "am i fully vaccinated", "fully vaccinated?", "fully vaccinated in Canada"],
+			"responses": ["Please visit <a href='https://travel.gc.ca/travel-covid/travel-restrictions/covid-vaccinated-travellers-entering-canada' target='_blank' > here </a> to check if you qualify as a fully vaccinated traveller and relevant information about pre-entry testing, and testing on children."]
+		},
+		{
+			"tag": "externalQRCode",
+			"patterns": ["I got doses outside of Ontario, how do i get my QR code?", "does BC QR code work in Ontario?", "Can i use qr code from another province", "do other countries require qr codes"],
+			"responses": ["COVID-19 Vaccination QR codes can be used in different provinces and QR codes from other provinces can be used in Ontario. If you have received a vaccine dose in another province or country, contact Toronto Public Health at 416-338-7600 to get your updated QR code. Other countries might require QR codes as well but most countries should accept the official Ontario QR code. For futher instructions on proof of vaccination, please see <a href='https://www.toronto.ca/home/covid-19/covid-19-vaccines/covid-19-proof-of-vaccination/' 'target='_blank'> here </a>. To document your COVID-19 out of province immunization record(s), please visit <a href='https://s.tphsurvey.chkmkt.com/?e=257486&h=A5FF381E0086CCF&l=en' 'target='_blank'> here </a>."]
+		},
+		{
+			"tag": "QRCodeUses",
+			"patterns": ["where is qr code required", "can i use other sort of vaccination proof other than qr code", "will qr code always be required", "what businesses require qr codes as proof of vaccination"],
+			"responses": ["QR codes are currently not required for proof in public indoor settings. However, private businesses such as restaurants, bars, barber shops, and gyms can still decide to require proof of vaccination if they choose too. For further instructions on proof of vaccination, please see <a href='https://www.toronto.ca/home/covid-19/covid-19-vaccines/covid-19-proof-of-vaccination/' 'target='_blank'> here </a>"]
+		},
+		{
+			"tag": "gettingQRCode",
+			"patterns": ["how can i update my qr code after booster", "I have a qr code after 2 doses, do i have to update my qr code", "I don't have a health card, how do i get my QR code?", "How do I get my QR code", "no OHIP qr code", "I dont have insurance, how to get QR code", "how to get qr code", "can i get covid QR code with UHIP", "vaccination QR code", "QR code", "proof of vaccination code", "vaccination proof qr code", "ontario covid qr code"],
+			"responses": ["If you have a green health card, you can get your QR code by visiting <a href='https://covid19.ontariohealth.ca/' target='_blank'> here </a>. If you have a red or white health card, call the Provincial Vaccine Contact Centre at 1-833-943-3900 to receive your QR code. If you do not have a health card or insurance, contact Toronto Public Health at 416-338-7600 to get your QR code. Visit <a href='https://covid-19.ontario.ca/get-proof/' target='_blank'> here </a> for more information."]
+		},
+		{
+			"tag": "boosterSideEffects",
+			"patterns": ["are there any side effects from getting a booster", "are booster side effects worse than the first 2 doses", "how long does it take for side effects from the booster to go away", "I have muscle pains, what should I do?", "severe fever", "side effect of vaccination", "i have a extreme fever after vaccination"],
+			"responses": ["The possible side effects after a booster are the same as with the earlier doses and include muscle pains, tiredness, fever, chills, etc. Since the side effects from the booster are similar to the second dose, they should go away after a few days. More information can be found at <a href='https://www.cdc.gov/coronavirus/2019-ncov/vaccines/expect/after.html' target='_blank'> here </a>"]
+		},
+		{
+			"tag": "boosterEligibity",
+			"patterns": ["how long do i have to wait to get booster after my previous vaccine ", "how old should I be to get a booster", "should I get a booster shot if I'm pregnant", "can I choose which vaccine to get for my booster", "do I need to pay an extra fee to get the booster", "if I got covid do I still need to get a booster", "do immunocompromised people need to get a booster too"],
+			"responses": ["The booster is recommended to be taken 6 months after the last dose for those older than 18 years of age. Boosters are also recommeneded for those between the ages of 12 and 17 if they are at a higher risk of infection. If you have been previously infected with COVID-19, a booster is still recommended 3 months after infection. Pregnant people are at a higher risk of complications due to COVID-19 infection and therefore are highly encouraged to get a booster dose. Those that are immunocompromised should also get a booster dose 6 months after their initial primary dose series. For more detailed information about comparison between different vaccines, schedule recommendation, please visit <a href='https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19/vaccines/how-vaccinated.html#a9' target='_blank'> here </a>  and  <a href='https://www.cdc.gov/coronavirus/2019-ncov/vaccines/How-Do-I-Get-a-COVID-19-Vaccine.html' target='_blank'> here </a>."]
+		},
+		{
+			"tag": "boosterInfo",
+			"patterns": ["what's the difference between third dose and booster shot", "why is booster needed", "how often will booster be required", "what vaccines are available for booster", "I heard it is better to receive Moderna than Pfizer for my booster dose (I had Pfizer for my primary vaccine series). Is it true? ", "will there be boosters that are modified for new variants", "are boosters effective for newer variants as well", "does needing a booster mean the vaccine does not work", "is the dosage used for booster doses different"],
+			"responses": ["For comparison on differnet kinds of vaccine/booster, please check <a href='https://www.cdc.gov/coronavirus/2019-ncov/vaccines/stay-up-to-date.html?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fcoronavirus%2F2019-ncov%2Fvaccines%2Fdifferent-vaccines.html' target = '_blank'> here </a>. Booster shots contain the same ingredients and dosage as the previous doses (except for Moderna where half the dosage is administered for a booster). Boosters are recommended because immunity from previous doses decreases over time and so booster doses can provide a better immune response by reintroducing more antibodies. The booster dose helps increase protection against new variants as well but not as effectively as older variants. Adults older than 30 years can take either mRNA vaccine as their booster does regardless of their previous doses. The Pfizer vaccine is preferred for those between the ages of 12 and 29. More information can be found at <a href='https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19/vaccines/how-vaccinated.html#a9' target='_blank'> here </a>."]
+		},
+		{
+			"tag": "boosterUses",
+			"patterns": ["can i still visit public facilities if I do not have booster", "am I still fully vaccinated without a booster", "are there any countries that require boosters to enter", "will I require a booster in the future to be considered fully vaccinated", "will I keep requiring boosters in the future", "do I need to get a fourth dose later this year", "will I need a yearly booster shot like the flu shot"],
+			"responses": ["In Canada, having a complete dose series of an approved vaccine is enough to be considered fully vaccinated, so a booster is not required. Currently, there are no plans to change this or require additional doses but provincial guidelines are constantly changing. The latest travel guidelines can be checked <a href='https://travel.gc.ca/travel-covid’ target='_blank' > here </a>. However, numerous countries are now requiring booster doses to enter. Therefore, specific information relating to the country of travel can be found <a href='https://wwwnc.cdc.gov/travel/page/faq’ target='_blank' > here </a>"]
+		}
+	]
+}
