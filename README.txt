@@ -19,3 +19,14 @@ Deployment Section:
 - predict.py: Helper used by deploy.py to utilize trained model and predict answer
 
 NYGH.json and augmented_data.json will be required to run above code. A example of NYGH.json is provided in the directory.
+
+
+
+FOR REMOTE DEPLOYMENT:
+
+We have used heroku on testing remote deployment of the chatbot, the codebase here is too large for heroku to compile and deploy.
+
+I have created a separate github page here: https://github.com/geyi1/NYGH_chatbot_only for remote deployment, this repository is bascially the same, but without all the training code
+
+To deploy with latest trained model, copy the newest chatbot_model_{}.h5, augmented_data.json, words.pkl, classes.pkl into the repository, and you can try on your own heroku account to deploy remotely
+
